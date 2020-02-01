@@ -55,6 +55,7 @@ class TicTacToe
   end
 
   def turn
+<<<<<<< HEAD
     puts "Enter your selection (Number 1-9):"
     index = gets.chomp.to_i
     index_new = input_to_index(index)
@@ -65,6 +66,21 @@ class TicTacToe
     else
       turn
     end
+=======
+    current_player
+    puts "Enter your selection (Number 1-9):"
+    index = gets.chomp.to_i
+    index_new = input_to_index(index)
+    if valid_move?(index_new) == true
+      move(index_new, token = "X")
+    else
+      puts "Incorrect selection! Try another number:"
+      index = gets.chomp.to_i
+      index_new = input_to_index(index)
+      move(index_new, token = "X")
+    end
+    display_board
+>>>>>>> 230144d1a7bad145a4ee65274ea1be24629cff72
   end
 
   def won?
@@ -119,6 +135,7 @@ class TicTacToe
   end
 
   def play
+<<<<<<< HEAD
     until over? == true
       turn
     end
@@ -130,3 +147,13 @@ class TicTacToe
     end
   end
 end
+=======
+    @board = Array.new(9, " ")
+    turn until over?
+    won? ? puts("Congratulations #{winner}!") : puts("Cat's Game!")
+    puts "Would you like to play again? (Y or N)"
+    gets.strip.downcase == "y" || gets.strip.downcase == "yes" ? play : puts("Goodbye!")
+  end
+end
+end
+>>>>>>> 230144d1a7bad145a4ee65274ea1be24629cff72
